@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notification Popup Example</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        #notification {
+    position: fixed;                 /* position is set to fixed to display it to a particular area of a page and so top and right are also 20px*/
+    top: 20px;
+    right: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+  
+    
+  }
+  
+  #notification p {
+    margin: 0 0 10px;
+  }
+  
+  .hide {
+    display: none;
+  }
+    </style>
+</head>
+<body>
+	<button onclick="showNotification()">Show Notification</button>
+
+<div id="notification" class="hide">
+  <p>This is a notification message.</p>
+  <button onclick="hideNotification()">Close</button>
+</div>
+
+	<script src="script.js"></script>
+    <script>
+        function showNotification() {
+    document.getElementById("notification").classList.remove("hide");         // .remove removes the particular class from that tag
+  }
+  
+  function hideNotification() {
+    document.getElementById("notification").classList.add("hide");           // .add removes the particular class from that tag
+  }
+    </script>
+</body>
+</html>

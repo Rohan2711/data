@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+       <form onsubmit="handleSubmit(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    
+    <input type="submit" value="Submit">
+    <button onclick="handleClick()">Click me</button>
+
+    <div onmouseover="handleMouseover(event)" class="my-element">
+        Hover over me!
+      </div>
+
+      <input type="text" oninput="handleInput(event)">
+
+  </form>
+  
+  <script>
+  function handleSubmit(event) {
+    event.preventDefault(); // prevent default form submission behavior
+    let formData = new FormData(event.target);
+    alert("Form data: ", formData);
+  }
+  function handleClick() {
+    console.log("Button clicked!");
+  }
+
+  function handleMouseover(event) {
+    event.target.style.backgroundColor = "yellow";
+  }
+
+  function handleInput(event) {
+  console.log("Input value: ", event.target.value);
+}
+  </script>
+
+        
+        
+    </body>
+</html>

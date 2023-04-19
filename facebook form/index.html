@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Facebook Registration Form</title>
+
+    <style>
+        /* Styling the Body element i.e. Color,
+        Font, Alignment */
+        body {
+            background-color: #773333;
+            font-family: Verdana;
+            text-align: center;                    /* sgrya colors la bgh konta pahije tula */
+        }
+ 
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;                                   /* sgrya colors la bgh konta pahije tula */
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+ 
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+ 
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+ 
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;                                           /* sgrya colors la bgh konta pahije tula */
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+ 
+    
+ 
+        /* Styling Button */
+        button {
+            background-color: rgb(174, 18, 42);
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+	<script>
+		function validateForm() {
+			// Get form elements
+			var firstName = document.forms["registration"]["firstName"].value;
+			var lastName = document.forms["registration"]["lastName"].value;
+			var email = document.forms["registration"]["email"].value;
+			var password = document.forms["registration"]["password"].value;
+			var confirmPassword = document.forms["registration"]["confirmPassword"].value;
+
+			// Check for empty fields
+			if (firstName == "" || lastName == "" || email == "" || password == "" || confirmPassword == "") {
+				alert("Please fill in all fields.");
+				return false;
+			}
+
+			// Check email format
+			var emailRegex = /\S+@\S+\.\S+/;
+			if (!emailRegex.test(email)) {
+				alert("Please enter a valid email address.");
+				return false;
+			}
+
+			// Check password length
+			if (password.length < 8) {
+				alert("Password must be at least 8 characters.");
+				return false;
+			}
+
+			// Check password match
+			if (password != confirmPassword) {
+				alert("Passwords do not match.");
+				return false;
+			}
+
+            alert("Successfully registered")
+		}
+	</script>
+
+
+</head>
+<body>
+	
+	<form name="registration" onsubmit="return validateForm()">
+        <div class="form-control">
+            <label for="firstName">First Name:</label>
+		<input type="text" id="firstName" name="firstName"><br><br>
+        </div>
+		
+        <div class="form-control">
+            <label for="lastName">Last Name:</label>
+		<input type="text" id="lastName" name="lastName"><br><br>
+        </div>
+		
+
+        <div class="form-control">
+            <label for="email">Email Address:</label>
+		<input type="email" id="email" name="email"><br><br>
+        </div>
+		
+
+        <div class="form-control">
+            <label for="password">Password:</label>
+		<input type="password" id="password" name="password"><br><br>
+        </div>
+		
+        <div class="form-control">
+            <label for="confirmPassword">Confirm Password:</label>
+		<input type="password" id="confirmPassword" name="confirmPassword"><br><br>
+
+        </div>
+		
+		<button type="submit" value="submit">Register</button>
+	</form>
+</body>
+</html>

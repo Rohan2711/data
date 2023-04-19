@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+			<html lang="en">
+			
+			<head>
+				<meta charset="UTF-8">
+				<meta http-equiv="X-UA-Compatible"
+					content="IE=edge">
+				<meta name="viewport" content=
+					"width=device-width, initial-scale=1.0">
+			</head>
+			
+			<body>
+			
+				<!-- Video element -->
+				<video src="4.mp4"
+					type="video/mp4" muted class="vid"	 style="width:300px;height:500px;margin-top:5%;margin-left:5%;">
+				</video>
+			
+			
+
+				<video src="4.mp4"
+					type="video/mp4" muted class="vid"
+					 style="width:300px;height:500px;margin-top:5%;margin-left:5%;">
+				</video>
+
+                <!-- TUla ajun videos add kryche asel tr ha khalcha code add krsil ditto  <video pasun tr </video> prunt , 4 line khlache
+
+                <video src="4.mp4"
+                type="video/mp4" muted class="vid"
+                 style="width:300px;height:500px;margin-top:5%;margin-left:5%;">
+            </video>
+
+                       ani src mdhe aple videos cha nav tak je play krnar ahe tu,ani te videos same folder mdhe thev jya folder 
+                       mdhe he file ahe ani baki kahich change nko kru
+                    Itha SRC mdhe mi 4.mp4 add kel becaz te mazya video cha nav hot,tuza video cha nav khi dusra asu skte -->
+			
+				<script>
+			
+			
+					let clip = document.querySelectorAll(".vid")        // yachani sgre tag jyala vid class dila ahe ,access kru skto
+
+	
+
+
+		for(let i=0;i<clip.length;i++)
+		{
+			clip[i].addEventListener("mouseover", function (e) {
+			clip[i].play();
+
+			clip[i].addEventListener("mouseout", function (e) {
+			clip[i].pause();
+		})
+		})
+		}
+		
+			
+				</script>
+			</body>
+			
+			</html>
+			
+		</div>
+	</div>
+	
+</body>
+</html>

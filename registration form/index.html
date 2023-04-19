@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+
+    <style>
+        /* Styling the Body element i.e. Color,
+        Font, Alignment */
+        body {
+            background-color: #773333;
+            font-family: Verdana;
+            text-align: center;                    /* sgrya colors la bgh konta pahije tula */
+        }
+ 
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;                                   /* sgrya colors la bgh konta pahije tula */
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+ 
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+ 
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+ 
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;                                           /* sgrya colors la bgh konta pahije tula */
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+ 
+    
+ 
+        /* Styling Button */
+        button {
+            background-color: rgb(174, 18, 42);
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <form>
+            <div class="form-control">
+                <label for="FName">First Name: </label>
+                <input type="text" name="FName" id="FName" placeholder="Enter First Name"><br>
+            </div>
+            <div class="form-control">
+                <label for="LName">Last Name: </label>
+                <input type="text" name="LName" id="LName" placeholder="Enter Last Name"><br>
+            </div>
+            <div class="form-control">
+                <label for="branch">Branch: </label>
+                <select type="text" id="branch" name="branch">
+                    <option>Computer</option>
+                    <option>IT</option>
+                    <option>Mechanical</option>
+                    <option>Civil</option>
+                </select><br>
+            </div>
+            <div class="form-control">
+                <label for="Phone">Mob Number: </label>
+                <input type="number" name="Phone" id="Phone" placeholder="Enter Number"><br>
+
+            </div>
+            <div class="form-control">
+                <label for="Password">Password: </label>
+                <input type="password" name="Password" id="Password" placeholder="Enter Password"><br>
+            </div>
+            <div class="form-control">
+                <label for="ConPassword">Confirm Password: </label>
+                <input type="password" name="ConPassword" id="ConPassword" placeholder="Confirm Password"><br>
+            </div> 
+        
+        <button onclick="validate()">Submit</button>
+        </form>
+        <script src="" async defer></script>
+
+        <script>
+            function validate(){
+                var fname=document.getElementById("FName").value;
+                var lname=document.getElementById("LName").value;
+                var branch=document.getElementById("branch").value;
+                var number=document.getElementById("Phone").value;
+                var password=document.getElementById("Password").value;
+                var conpassword=document.getElementById("ConPassword").value;
+        
+                if(lname==""||branch==""||fname==""||number==""||password==""||conpassword=="")
+                {
+                    alert("All field should be filled");
+                    event.preventDefault();         // event.preventDefault screen la refresh nhi hu det ani je input dile ahe tech rhu dete
+                    return;
+                }
+                else if(password!==conpassword){
+
+                      alert("Password and Confirm Password should be similar ");
+                      event.preventDefault();
+                      return;
+                }else if(password.length<8){
+                    alert("Length of Password should be atleast 8 character");
+                    event.preventDefault();
+                    return;
+                }else if(number.length!=10){
+                    alert("Number should be of only 10 digits");
+                    event.preventDefault();
+                    return;
+                }
+                event.preventDefault();
+                signed();
+                function signed(){
+                    const myWindow = window.open();
+                    myWindow.document.write("Successfully Signed in");
+                     myWindow.document.write("<p>First Name: "+fname+" </p>");
+                     myWindow.document.write("<p>Last Name: "+lname+"</p>");
+                     myWindow.document.write("<p>Branch: "+branch+"</p>");
+                     myWindow.document.write("<p>Phone Number: "+number+"</p>");
+                }
+                return;
+              
+            }
+        </script>
+    </body>
+</html>

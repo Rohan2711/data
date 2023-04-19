@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script src="script.js">
+            
+        </script>
+        <title>
+            fiboo
+        </title>
+    </head>
+    <body>
+        <form method="" action="script.js">
+        <label>
+            Enter no:
+        </label>
+        <input type="number" id="t1"><br>
+        <input type="button" value="SHOW" onclick="f1()">
+        <p id="p1"></p>
+    </form>
+    <script>
+        function f1() {
+    var number=document.getElementById("t1").value;
+    document.getElementById("p1").innerHTML="";
+    if(number==1)
+       {
+        document.getElementById("p1").innerHTML+="0 ";
+        return;
+       }
+    else if(number==2)
+    {
+        document.getElementById("p1").innerHTML+="0 1";
+        return;
+    }
+    let n1 = 0, n2 = 1, n3;
+    n3= n1 + n2;
+    document.getElementById("p1").innerHTML+="0 1 ";
+    for(var i=2;i<number;i++) {
+        // print the next term
+       
+        // alert(n3);
+        document.getElementById("p1").innerHTML+=n3;
+        document.getElementById("p1").innerHTML+=" ";
+        n1 = n2;
+        n2 = n3;
+        n3 = n1 + n2;
+    }
+
+}
+    </script>
+    </body>
+</html>

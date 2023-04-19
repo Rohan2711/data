@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+
+    <style>
+        .container{
+            border: 1px solid black;
+            margin-left: 25%;
+            margin-right: 25%;
+            background-color: beige;
+        }
+        form{
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+        button{
+            margin-top: 25px;
+        }
+        body{
+            background-color: azure;
+        }
+       
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+        <label for="ans"> <p style="text-align: center;">Enter years:</p>  </label>
+        <div style="text-align: center;">
+            <form >
+                <input type="number" name="ans" id="ans"><br>
+                <button type="submit" onclick="return getweeks(event)"><strong>Submit</strong></button>
+            </form>
+        </div>
+    
+        <div id="final" style="text-align: center;">
+        </div>
+        <div id="string" style="text-align: center;">
+        </div>
+        <div id="time" style="text-align: center;">
+        </div>
+    </div>
+
+
+    <script>
+        function getweeks(event) {
+    event.preventDefault();
+    let vari=document.getElementById('ans').value;
+    if(vari<0){
+        alert("value can't be zero");
+    }
+    else{
+        document.getElementById('final').innerHTML="Average Lifespan of human life in weeks: "+vari*52;         // 52 is multiplies because 1 year has 52 weeks
+        var str="<br> I am Sneha Supe";   // stored string in variable str
+        document.getElementById('string').innerHTML=str;
+
+        let obj= new Date();                           
+        let hrs= obj.getHours();                // stores current time 
+        let min=obj.getMinutes();
+        var time=hrs+":"+min;
+
+        if(hrs<12){                                                       
+            document.getElementById('time').innerHTML="Good Morning ";
+        }
+        else if(hrs < 18){
+            document.getElementById('time').innerHTML="Good Afternoon";
+        }
+        else{
+            document.getElementById('time').innerHTML="Good Evening";
+        }
+
+        document.getElementById('time').innerHTML+=time;   // displays time 
+
+
+    }   
+    // return false;
+
+}
+    </script>
+</body>
+</html>
